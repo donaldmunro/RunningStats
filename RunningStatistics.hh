@@ -56,7 +56,9 @@ private:
 public:
    RunningStatistics() : n(0), M1(0), M2(0), M3(0), M4(0) {}
 
-   void operator()(const double x)
+   void clear() { n = 0; M1 = M2 = M3 = M4 = static_cast<Real>(0); }
+
+   void operator()(const Real x)
    //-----------------------------
    {
 #ifdef _RUNNING_STATISTICS_MT_
